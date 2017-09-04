@@ -49,7 +49,7 @@ public class Thrust : MonoBehaviour {
     {
         if (ThrustRequest)
         {
-            rb.AddRelativeForce(Vector3.up * ThrustMagnitude); 
+            rb.AddRelativeForce(Vector3.forward * ThrustMagnitude); 
         }
         /*
         if (TurnRequest)
