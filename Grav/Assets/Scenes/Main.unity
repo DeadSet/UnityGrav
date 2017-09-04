@@ -422,7 +422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objToAttract: {fileID: 1637019182}
-  G: 10
+  G: 1
   rb: {fileID: 1331071104}
 --- !u!1 &1353085945
 GameObject:
@@ -532,7 +532,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 10
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: Infinity
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -597,8 +597,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1637019181}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.0059, y: 0, z: 10}
-  m_LocalScale: {x: 0.5, y: 0.49406898, z: 0.5}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 1084083333}
   m_Father: {fileID: 0}
@@ -615,4 +615,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f30a9d348cae7c0458ab77dffc2a42bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ThrustMagnitude: 50
+  ThrustMagnitude: 10
+  TurnGain: 50
