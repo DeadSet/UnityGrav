@@ -9,19 +9,22 @@ public class Thrust : MonoBehaviour {
 
     private Rigidbody rb;
     private bool ThrustRequest = false;
-    //private float TorqueRequest;
-    //private bool TurnRequest = false;
     private int rayTarget;
     private float rayLength = 1000f;
+    private 
 
 
-	// Use this for initialization
+	
 	void Awake () {
         rb = GetComponent<Rigidbody>();
         rayTarget = LayerMask.GetMask("RayTarget");
+     
+        Gravity.orbitals.Add(rb);
+     
+        
 	}
 	
-	// Update is called once per frame
+	
 	void Update () {
         if (Input.GetButton("Jump"))
         {
@@ -31,18 +34,7 @@ public class Thrust : MonoBehaviour {
         {
             ThrustRequest = false;
         }
-/*
-        if (Mathf.Abs(Input.GetAxis("Horizontal")) >= .1f)
-        {
-            TorqueRequest = Input.GetAxis("Horizontal");
-            TurnRequest = true;
 
-        }
-        else
-        {
-            TurnRequest = false;
-        }
-*/
 	}
 
     private void FixedUpdate()
@@ -51,12 +43,7 @@ public class Thrust : MonoBehaviour {
         {
             rb.AddRelativeForce(Vector3.forward * ThrustMagnitude); 
         }
-        /*
-        if (TurnRequest)
-        {
-            rb.transform.Rotate(TorqueRequest * Time.deltaTime * TurnGain, 0, 0, Space.Self);
-        }
-        */
+     
 
         Turn();
     }

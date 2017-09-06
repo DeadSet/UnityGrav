@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class Gravity : MonoBehaviour {
 
-    public Rigidbody objToAttract;
+    //public Rigidbody objToAttract;
     public float G = 100f;
 
 
-    public Rigidbody rb;
-   
-    
+    private Rigidbody rb;
+    public static List<Rigidbody> orbitals;
     
     // Use this for initialization
 	void Awake () {
 
-      
+        rb = GetComponent<Rigidbody>();
+        orbitals = new List<Rigidbody>();
+   
         
 		
 	}
@@ -23,7 +24,21 @@ public class Gravity : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
-        Attract(objToAttract);
+        if (orbitals == null)
+        {
+            return;
+        }
+        else
+        {
+            foreach (Rigidbody orbital in orbitals)
+            {
+                Attract(orbital);
+            }
+        }
+       
+    
+       
+     
 	}
 
     void Attract(Rigidbody objToAttract)
