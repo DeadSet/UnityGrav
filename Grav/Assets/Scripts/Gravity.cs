@@ -21,7 +21,7 @@ public class Gravity : MonoBehaviour {
 		
 	}
 	
-	// Update is called once per frame
+	// Update is called once per tick
 	void FixedUpdate () {
 
         if (orbitals == null)

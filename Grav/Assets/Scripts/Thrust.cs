@@ -15,7 +15,7 @@ public class Thrust : MonoBehaviour {
 
 
 	
-	void Awake () {
+	void OnEnable () {
         rb = GetComponent<Rigidbody>();
         rayTarget = LayerMask.GetMask("RayTarget");
      
