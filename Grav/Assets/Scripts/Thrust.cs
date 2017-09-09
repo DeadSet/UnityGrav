@@ -15,7 +15,7 @@ public class Thrust : MonoBehaviour {
 
 
 	
-	void OnEnable () {
+	void Start () {     // when this was OnEnable on the first instance of the ship attracted. Other would if toggled in inspector. 
         rb = GetComponent<Rigidbody>();
         rayTarget = LayerMask.GetMask("RayTarget");
      
