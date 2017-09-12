@@ -12,14 +12,14 @@ public class CameraControl : MonoBehaviour {
     public GameObject playerShip;
 
     private Camera gameCamera;
-    private float ZoomSpeed;
+    private float zoomSpeed;
     
 
 
 	// Use this for initialization
 	void Awake () {
         gameCamera = GetComponent<Camera>();
-        //playerShip = 
+        playerShip = GameObject.FindWithTag("Player"); 
 	}
 	
 	// Update is called once per frame
@@ -31,6 +31,21 @@ public class CameraControl : MonoBehaviour {
 
     private void Zoom()
     {
-       
+        float newSize = FindNewSize();
+        gameCamera.orthographicSize = Mathf.SmoothDamp(gameCamera.orthographicSize, newSize, ref zoomSpeed, dampTime);
+    }
+
+    private float FindNewSize()
+    {
+        float size = 0f;
+
+        size = Mathf.Max(size, Mathf.Abs(playerShip.transform.position.y));
+        size = Mathf.Max(size, Mathf.Abs(playerShip.transform.position.x / gameCamera.aspect));
+
+        size += ScreenEdgeBuffer;
+
+        size = Mathf.Clamp(size, MinSize, MaxSize);
+
+        return size;
     }
 }
