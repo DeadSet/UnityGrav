@@ -11,7 +11,7 @@ public class Thrust : MonoBehaviour {
     private bool ThrustRequest = false;
     private int rayTarget;
     private float rayLength = 1000f;
-    private 
+    private bool fireRequest = false;
 
 
 	
@@ -26,13 +26,18 @@ public class Thrust : MonoBehaviour {
 	
 	
 	void Update () {
-        if (Input.GetButton("Jump"))
+        if (Input.GetButton("Fire2"))
         {
             ThrustRequest = true;
         }
         else
         {
             ThrustRequest = false;
+        }
+
+        if (Input.GetButtonDown("Fire1"))  
+        {
+            fireRequest = true;  //must be set back to false by firing function
         }
 
 	}
