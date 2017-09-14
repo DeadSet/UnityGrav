@@ -6,16 +6,17 @@ public class Thrust : MonoBehaviour {
 
     public float ThrustMagnitude = 1f;
     public float TurnGain = 1f;
+    public GameObject Projectile;
 
     private Rigidbody rb;
     private bool ThrustRequest = false;
     private int rayTarget;
     private float rayLength = 1000f;
-    private bool fireRequest = false;
+    private bool fireReady = true;
 
 
 	
-	void Start () {     // when this was OnEnable on the first instance of the ship attracted. Other would if toggled in inspector. 
+	void Start () {     // when this was OnEnable only the first instance of the ship attracted. Other would, if toggled in inspector. 
         rb = GetComponent<Rigidbody>();
         rayTarget = LayerMask.GetMask("RayTarget");
      
@@ -35,10 +36,16 @@ public class Thrust : MonoBehaviour {
             ThrustRequest = false;
         }
 
-        if (Input.GetButtonDown("Fire1"))  
+        if (Input.GetButton("Fire1") && fireReady)  
         {
-            fireRequest = true;  //must be set back to false by firing function
+            Fire();
+            fireReady = false;
         }
+       if (!Input.GetButton("Fire1"))
+        {
+            fireReady = true;
+        }
+        
 
 	}
 
@@ -48,7 +55,7 @@ public class Thrust : MonoBehaviour {
         {
             rb.AddRelativeForce(Vector3.forward * ThrustMagnitude); 
         }
-     
+        
 
         Turn();
     }
@@ -69,5 +76,11 @@ public class Thrust : MonoBehaviour {
             rb.MoveRotation(newRotation);
         }
         Debug.Log(Physics.Raycast(ray, out hit, rayLength, rayTarget, QueryTriggerInteraction.Collide));
+    }
+
+    void Fire()
+    {
+        Transform firelocation = transform;
+        Instantiate(Projectile, transform.position, transform.rotation);
     }
 }

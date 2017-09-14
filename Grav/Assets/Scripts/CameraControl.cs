@@ -17,7 +17,7 @@ public class CameraControl : MonoBehaviour {
 
 
 	// Use this for initialization
-	void Awake () {
+	void Start () {
         gameCamera = GetComponent<Camera>();
         playerShip = GameObject.FindWithTag("Player"); 
 	}
@@ -39,7 +39,7 @@ public class CameraControl : MonoBehaviour {
     {
         float size = 0f;
 
-        size = Mathf.Max(size, Mathf.Abs(playerShip.transform.position.y));
+        size = Mathf.Max(size, Mathf.Abs(playerShip.transform.position.z));
         size = Mathf.Max(size, Mathf.Abs(playerShip.transform.position.x / gameCamera.aspect));
 
         size += ScreenEdgeBuffer;
