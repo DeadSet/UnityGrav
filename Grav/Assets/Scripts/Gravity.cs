@@ -52,5 +52,8 @@ public class Gravity : MonoBehaviour {
         Vector3 force = direction.normalized * forceMagnitude;
 
         rbToAttract.AddForce(force);
+        rbToAttract.drag = 1 / Mathf.Pow(distance, 2);
     }
+
+    
 }

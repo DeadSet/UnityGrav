@@ -7,6 +7,7 @@ public class Thrust : MonoBehaviour {
     public float ThrustMagnitude = 1f;
     public float TurnGain = 1f;
     public GameObject Projectile;
+    public float FireForce;
 
     private Rigidbody rb;
     private bool ThrustRequest = false;
@@ -81,6 +82,10 @@ public class Thrust : MonoBehaviour {
     void Fire()
     {
         Transform firelocation = transform;
-        Instantiate(Projectile, transform.position, transform.rotation);
+        GameObject Spawned = Instantiate(Projectile, transform.position, transform.rotation);
+        Rigidbody SpawnedRB = Spawned.GetComponent<Rigidbody>();
+        SpawnedRB.velocity = rb.velocity;
+        SpawnedRB.AddRelativeForce(0f, 0f, FireForce);
+        rb.AddRelativeForce(0f, 0f, -FireForce);
     }
 }
