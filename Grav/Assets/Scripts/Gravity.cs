@@ -6,6 +6,7 @@ public class Gravity : MonoBehaviour {
 
     //public Rigidbody objToAttract;
     public float G = 100f;
+    public float DragCoef = 10f;
 
 
     private Rigidbody rb;
@@ -52,7 +53,8 @@ public class Gravity : MonoBehaviour {
         Vector3 force = direction.normalized * forceMagnitude;
 
         rbToAttract.AddForce(force);
-        rbToAttract.drag = 1 / Mathf.Pow(distance, 2);
+
+        rbToAttract.AddForce(rbToAttract.velocity.normalized * -DragCoef * (1/Mathf.Pow(distance,3)) * Mathf.Pow(rbToAttract.velocity.magnitude, 2) * Time.deltaTime);
     }
 
     

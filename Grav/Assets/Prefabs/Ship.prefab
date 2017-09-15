@@ -227,7 +227,7 @@ MonoBehaviour:
   ThrustMagnitude: 10
   TurnGain: 50
   Projectile: {fileID: 1946470496318178, guid: cf66003739d0c2f459c4e44a055f19e1, type: 2}
-  FireForce: 200
+  FireForce: 10
 --- !u!136 &136703079145457704
 CapsuleCollider:
   m_ObjectHideFlags: 1

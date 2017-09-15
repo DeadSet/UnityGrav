@@ -9,7 +9,7 @@ public class CameraControl : MonoBehaviour {
     public float ScreenEdgeBuffer = 4f;
     public float MinSize = 20f;
     public float MaxSize = 80f;
-    public GameObject playerShip;
+    public static GameObject playerShip;
 
     private Camera gameCamera;
     private float zoomSpeed;
@@ -19,7 +19,7 @@ public class CameraControl : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         gameCamera = GetComponent<Camera>();
-        playerShip = GameObject.FindWithTag("Player"); 
+       
 	}
 	
 	// Update is called once per frame
@@ -47,5 +47,10 @@ public class CameraControl : MonoBehaviour {
         size = Mathf.Clamp(size, MinSize, MaxSize);
 
         return size;
+    }
+
+    public static void BeginCameraTracking()
+    {
+        playerShip = GameObject.FindWithTag("Player");
     }
 }

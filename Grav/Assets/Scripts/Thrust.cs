@@ -22,6 +22,7 @@ public class Thrust : MonoBehaviour {
         rayTarget = LayerMask.GetMask("RayTarget");
      
         Gravity.orbitals.Add(rb);
+        CameraControl.BeginCameraTracking();
      
         
 	}
@@ -85,7 +86,8 @@ public class Thrust : MonoBehaviour {
         GameObject Spawned = Instantiate(Projectile, transform.position, transform.rotation);
         Rigidbody SpawnedRB = Spawned.GetComponent<Rigidbody>();
         SpawnedRB.velocity = rb.velocity;
-        SpawnedRB.AddRelativeForce(0f, 0f, FireForce);
-        rb.AddRelativeForce(0f, 0f, -FireForce);
+        SpawnedRB.AddRelativeForce(Vector3.forward * FireForce);
+        rb.AddRelativeForce(Vector3.back * FireForce);
+        
     }
 }
