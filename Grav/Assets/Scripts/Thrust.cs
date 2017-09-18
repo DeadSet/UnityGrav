@@ -88,6 +88,7 @@ public class Thrust : MonoBehaviour {
         SpawnedRB.velocity = rb.velocity;
         SpawnedRB.AddRelativeForce(Vector3.forward * FireForce);
         rb.AddRelativeForce(Vector3.back * FireForce);
+    
         
     }
 }

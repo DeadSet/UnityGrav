@@ -213,7 +213,35 @@ MonoBehaviour:
   ScreenEdgeBuffer: 4
   MinSize: 20
   MaxSize: 80
-  playerShip: {fileID: 0}
+--- !u!1 &483135825
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 483135826}
+  m_Layer: 0
+  m_Name: Controllers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &483135826
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 483135825}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1072552943}
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1072552941
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,18 +272,20 @@ MonoBehaviour:
   playerShip: {fileID: 1193733919003534, guid: 89f977550cd408541a4f9734b4127571, type: 2}
   startingForce: {x: -750, y: 0, z: 0}
   spawnPosition: {x: 0, y: 0, z: 10}
+  spawnThreat: 0
+  Threat: {fileID: 1890741087588352, guid: 2e144beb453401944bb08d199138953a, type: 2}
 --- !u!4 &1072552943
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1072552941}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 483135826}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1331071103
 GameObject:
@@ -368,6 +398,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   G: 1
+  DragCoef: 5
 --- !u!1 &1353085945
 GameObject:
   m_ObjectHideFlags: 0
