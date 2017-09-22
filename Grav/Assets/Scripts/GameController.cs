@@ -40,7 +40,7 @@ public class GameController : MonoBehaviour {
 
         x = Random.Range(-spawnRingRadius, spawnRingRadius);
         y = Mathf.Sqrt(Mathf.Pow(spawnRingRadius, 2f) - Mathf.Pow(x, 2f));
-        y = y *(Random.Range(0, 2) * 2 - 1); //returns 1 or -1, y will allways start positive
+        y = y *(Random.Range(0, 1) * 2 - 1); //returns 1 or -1, y will allways start positive
         Instantiate(Threat, new Vector3(x, 0f, y), Quaternion.identity);
     }
 }
