@@ -272,7 +272,8 @@ MonoBehaviour:
   playerShip: {fileID: 1193733919003534, guid: 89f977550cd408541a4f9734b4127571, type: 2}
   startingForce: {x: -750, y: 0, z: 0}
   spawnPosition: {x: 0, y: 0, z: 10}
-  spawnThreat: 0
+  spawnRingRadius: 20
+  RequestThreat: 0
   Threat: {fileID: 1890741087588352, guid: 2e144beb453401944bb08d199138953a, type: 2}
 --- !u!4 &1072552943
 Transform:
