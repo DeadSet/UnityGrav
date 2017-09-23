@@ -24,6 +24,8 @@ GameObject:
   - component: {fileID: 23717865303917522}
   - component: {fileID: 54559213852146610}
   - component: {fileID: 114593344478142954}
+  - component: {fileID: 114214162909539654}
+  - component: {fileID: 114305120889246046}
   m_Layer: 0
   m_Name: Threat
   m_TagString: Untagged
@@ -110,6 +112,30 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114214162909539654
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1890741087588352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 572927ddcd4fcb947970c8f4b18ff50f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 1
+--- !u!114 &114305120889246046
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1890741087588352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f86fe5a5a38f70946b89dacdc0616bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DestroyRadius: 50
 --- !u!114 &114593344478142954
 MonoBehaviour:
   m_ObjectHideFlags: 1

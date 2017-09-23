@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 23595690948619612}
   - component: {fileID: 54940390310212918}
   - component: {fileID: 114575497184733396}
+  - component: {fileID: 114286929859223586}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Player
@@ -213,6 +214,18 @@ TrailRenderer:
     generateLightingData: 0
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
+--- !u!114 &114286929859223586
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1193733919003534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f86fe5a5a38f70946b89dacdc0616bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DestroyRadius: 50
 --- !u!114 &114575497184733396
 MonoBehaviour:
   m_ObjectHideFlags: 1

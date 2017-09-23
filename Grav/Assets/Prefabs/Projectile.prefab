@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 23013751275931436}
   - component: {fileID: 114647715394209526}
   - component: {fileID: 54963438415879506}
+  - component: {fileID: 114682492486774474}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
@@ -109,6 +110,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 627aec45baebcee4181dab5c779eb10e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114682492486774474
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1946470496318178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f86fe5a5a38f70946b89dacdc0616bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DestroyRadius: 50
 --- !u!135 &135580063197759292
 SphereCollider:
   m_ObjectHideFlags: 1

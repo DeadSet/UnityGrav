@@ -17,4 +17,12 @@ public class Projectile : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    private void OnTriggerEnter(Collider other)
+    {
+        HealthManager collided = other.GetComponent<HealthManager>();
+        collided.ApplyDamage(1);
+        Destroy(gameObject);
+        
+    }
 }
